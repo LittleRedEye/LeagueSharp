@@ -6,6 +6,7 @@ Champions
  - Jarvan (SKO)
  - Rengar (SKO)
  - Karma (SKO)
+ - Katarina (TriKata by Jaskot)
 
 Credits to:
 

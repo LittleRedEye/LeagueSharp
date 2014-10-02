@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriKatarina", "TriKatarina\TriKatarina.csproj", "{C649F9D5-C482-4643-8DE7-5534657BD2B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triton", "Triton\Triton.csproj", "{33058694-D52A-44CA-A853-C124075DB881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C649F9D5-C482-4643-8DE7-5534657BD2B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C649F9D5-C482-4643-8DE7-5534657BD2B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C649F9D5-C482-4643-8DE7-5534657BD2B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C649F9D5-C482-4643-8DE7-5534657BD2B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33058694-D52A-44CA-A853-C124075DB881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33058694-D52A-44CA-A853-C124075DB881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33058694-D52A-44CA-A853-C124075DB881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33058694-D52A-44CA-A853-C124075DB881}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
