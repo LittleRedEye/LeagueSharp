@@ -14,6 +14,7 @@ namespace TriKatarina
 {
     class Katarina : ChampionPluginBase
     {
+
         private int _wardJumpRange = 600;
         private Brain _brain;
         private static Katarina _instance;
