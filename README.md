@@ -7,6 +7,7 @@ Champions
  - Rengar (SKO)
  - Karma (SKO)
  - Katarina (TriKata by Jaskot)
+ - Talon (kTalon by Kk2)
 
 Credits to:
 
