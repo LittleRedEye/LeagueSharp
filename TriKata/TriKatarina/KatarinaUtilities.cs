@@ -21,8 +21,7 @@ namespace TriKatarina
         {
             if (target == null || !target.Unit.IsValid || !Katarina.Instance.Q.IsReady() || !target.Unit.IsValidTarget(Katarina.Instance.Q.Range))
                 return false;
-
-            Katarina.Instance.Q.CastOnUnit(target.Unit, true);
+            Katarina.Instance.Q.CastOnUnit(target.Unit, Katarina.Instance.Config.Item("packets").GetValue<bool>());
             return true;
         }
 
@@ -31,7 +30,7 @@ namespace TriKatarina
             if (target == null || !target.IsValid || !Katarina.Instance.Q.IsReady() || !target.IsValidTarget(Katarina.Instance.Q.Range))
                 return false;
 
-            Katarina.Instance.Q.CastOnUnit(target, true);
+            Katarina.Instance.Q.CastOnUnit(target, Katarina.Instance.Config.Item("packets").GetValue<bool>());
 
             return true;
         }
@@ -42,7 +41,7 @@ namespace TriKatarina
             if (target == null || !target.Unit.IsValid || !Katarina.Instance.E.IsReady() || !target.Unit.IsValidTarget(Katarina.Instance.E.Range))
                 return false;
 
-            Katarina.Instance.E.CastOnUnit(target.Unit, true);
+            Katarina.Instance.E.CastOnUnit(target.Unit, Katarina.Instance.Config.Item("packets").GetValue<bool>());
 
             return true;
         }
@@ -52,7 +51,7 @@ namespace TriKatarina
             if (target == null || !target.IsValid || !Katarina.Instance.E.IsReady() || !target.IsValidTarget(Katarina.Instance.E.Range))
                 return false;
 
-            Katarina.Instance.E.CastOnUnit(target, true);
+            Katarina.Instance.E.CastOnUnit(target, Katarina.Instance.Config.Item("packets").GetValue<bool>());
 
             return true;
         }

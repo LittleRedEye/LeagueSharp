@@ -92,6 +92,7 @@ namespace TriKatarina
 
             Menu miscMenu = new Menu("Misc Settings", "Misc");
             miscMenu.AddItem(new MenuItem("WardJumpKey", "Ward Jump Key").SetValue(new KeyBind('G', KeyBindType.Press)));
+            miscMenu.AddItem(new MenuItem("packets", "Use Packets").SetValue(true));
 
             _orbwalker = new Orbwalking.Orbwalker(_config.SubMenu("Orbwalking"));
 
