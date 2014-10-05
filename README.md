@@ -8,6 +8,7 @@ Champions
  - Karma (SKO)
  - Katarina (TriKata by Jaskot)
  - Talon (kTalon by Kk2)
+ - Nasus (Nasus the DOG by blm95)
 
 Credits to:
 
