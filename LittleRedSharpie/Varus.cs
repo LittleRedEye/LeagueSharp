@@ -307,7 +307,8 @@ namespace LittleRedSharpie
                         default:
                             break;
                     }
-                    var wDamage = stackList[stackList.FindIndex(x => x.id == hero.NetworkId)].stacks * (wPercent * hero.MaxHealth);
+                    var stacks = stackList[stackList.FindIndex(x => x.id == hero.NetworkId)].stacks;
+                    var wDamage = stacks * wPercent * hero.MaxHealth;
                     qDamage = ObjectManager.Player.GetSpellDamage(hero, SpellSlot.Q) + wDamage;
                     eDamage = ObjectManager.Player.GetSpellDamage(hero, SpellSlot.E) + wDamage;
                     rDamage = ObjectManager.Player.GetSpellDamage(hero, SpellSlot.R) + wDamage;
@@ -336,7 +337,7 @@ namespace LittleRedSharpie
                         var prediction = R.GetPrediction(hero);
                         R.Cast(prediction.CastPosition);
                     }
-                    if (hero.IsValidTarget(600) && !hero.IsDead && hero.Health < dmgIgnite)
+                    if (hero.IsValidTarget(600) && !hero.IsDead && hero.Health < dmgIgnite && IgniteSlot != SpellSlot.Unknown)
                     {
                         ObjectManager.Player.SummonerSpellbook.CastSpell(IgniteSlot, hero);
                     }
