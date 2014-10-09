@@ -314,7 +314,7 @@ namespace LittleRedSharpie
             }
         }
 
-        private void OnAnimation(Obj_AI_Base sender, GameObjectPlayAnimationEventArgs args)
+        private void OnAnimation(GameObject sender, GameObjectPlayAnimationEventArgs args)
         {
             if (sender.IsMe)
             {

@@ -331,17 +331,18 @@ namespace LittleRedSharpie
             }
         }
 
-        private void OnAnimation(Obj_AI_Base sender, GameObjectPlayAnimationEventArgs args)
+        private void OnAnimation(GameObject sender, GameObjectPlayAnimationEventArgs args)
         {
-            if (sender.IsMe || !cassMenu.Item("mixedstationaryQ").GetValue<bool>() || sender.GetType() != typeof(Obj_AI_Hero) || Program._orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.Mixed)
+            if (sender.IsMe || !cassMenu.Item("mixedstationaryQ").GetValue<bool>() || sender.GetType() != typeof(Obj_AI_Hero) || Program._orbwalker.ActiveMode != Orbwalking.OrbwalkingMode.Mixed || !(sender is Obj_AI_Base))
                 return;
+            Obj_AI_Base test = (Obj_AI_Base)sender;
             //string animation = args.Animation.ToLower().in;
             //if (args.Animation.ToLower)
-            if ((args.Animation.ToLower().IndexOf("spell") > -1 || args.Animation.ToLower().IndexOf("attack") > -1 || args.Animation.ToLower().IndexOf("idle") > -1) && sender.IsValidTarget(Q.Range))
+            if ((args.Animation.ToLower().IndexOf("spell") > -1 || args.Animation.ToLower().IndexOf("attack") > -1 || args.Animation.ToLower().IndexOf("idle") > -1) && test.IsValidTarget(Q.Range))
             {
                 //if (cassMenu.Item("mixedstationaryQ").GetValue<bool>())
                 //{
-                Program.castSpell(sender, Q, false);
+                Program.castSpell(test, Q, false);
                 //Q.Cast(sender.ServerPosition);
                 //}
             }
