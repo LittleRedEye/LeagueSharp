@@ -321,13 +321,13 @@ namespace LittleRedSharpie
                 //Game.PrintChat(args.Animation.ToString());
                 if (args.Animation.ToLower().IndexOf("spell3") > -1 || args.Animation.ToLower().IndexOf("ult") > -1)
                 {
-                    Program._orbwalker.SetAttacks(false);
+                    Program._orbwalker.SetAttack(false);
                     Program._orbwalker.SetMovement(false);
                     isChanneling = true;
                 }
                 else
                 {
-                    Program._orbwalker.SetAttacks(true);
+                    Program._orbwalker.SetAttack(true);
                     Program._orbwalker.SetMovement(true);
                     isChanneling = false;
                 }

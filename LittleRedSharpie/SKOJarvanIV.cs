@@ -120,7 +120,7 @@ namespace LittleRedSharpie
 
         static void Game_OnGameUpdate(EventArgs args)
         {
-            Orbwalker.SetAttacks(true);
+            Orbwalker.SetAttack(true);
             HDR = new Items.Item(3074, Player.AttackRange + 50);
             TMT = new Items.Item(3077, Player.AttackRange + 50);
             var target = SimpleTs.GetTarget(Q.Range, SimpleTs.DamageType.Physical);

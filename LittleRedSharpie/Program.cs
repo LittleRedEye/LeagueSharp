@@ -86,6 +86,7 @@ namespace LittleRedSharpie
             {
                 //Cassiopeia.cassMenu.
                 var menuItem = menu.Item(spell.Slot + "Range").GetValue<Circle>();
+                Drawing.DrawText(1, 1, menuItem.Color, "cooooookies");
                 if (menuItem.Active && (spell.Level > 0) && spell.IsReady()) { Utility.DrawCircle(ObjectManager.Player.Position, spell.Range, spell.IsReady() ? menuItem.Color : Color.Red); }
             }
         }

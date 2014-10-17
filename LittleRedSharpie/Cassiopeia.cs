@@ -36,6 +36,8 @@ namespace LittleRedSharpie
             Game.OnGameUpdate += OnGameUpdate;
             Drawing.OnDraw += OnDraw;
 
+            
+
             LoadSpells();
             LoadMenu();
         }
@@ -131,7 +133,7 @@ namespace LittleRedSharpie
         {
             if (!ObjectManager.Player.IsDead)
             {
-                Program._orbwalker.SetAttacks(true);
+                Program._orbwalker.SetAttack(true);
                 switch (Program._orbwalker.ActiveMode)
                     {
                     case Orbwalking.OrbwalkingMode.Combo:
@@ -164,11 +166,11 @@ namespace LittleRedSharpie
             }
             if (cassMenu.Item("comboAA").GetValue<bool>())
             {
-                Program._orbwalker.SetAttacks(true);
+                Program._orbwalker.SetAttack(true);
             }
             else
             {
-                Program._orbwalker.SetAttacks(false);
+                Program._orbwalker.SetAttack(false);
             }
             if (cassMenu.Item("comboUltimate").GetValue<bool>() && target.IsValidTarget(R.Range))
             {
@@ -213,7 +215,7 @@ namespace LittleRedSharpie
             {
                 return;
             }
-            Program._orbwalker.SetAttacks(false);
+            Program._orbwalker.SetAttack(false);
             if (!HasPoisonBuff(target) && cassMenu.Item("mixedQ").GetValue<bool>() && !cassMenu.Item("mixedstationaryQ").GetValue<bool>())
             {
                 Program.castSpell(target, Q, false);

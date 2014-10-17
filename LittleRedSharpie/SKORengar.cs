@@ -137,7 +137,7 @@ namespace LittleRedSharpie
             Q = new Spell(SpellSlot.Q, Player.AttackRange + 50);
             SOD = new Items.Item(3131, Player.AttackRange + 50);
 
-            Orbwalker.SetAttacks(true);
+            Orbwalker.SetAttack(true);
             if (Config.Item("ActiveCombo").GetValue<KeyBind>().Active)
             {
                 Combo();
@@ -173,7 +173,7 @@ namespace LittleRedSharpie
         private static void Combo()
         {
             var target = SimpleTs.GetTarget(E.Range, SimpleTs.DamageType.Physical);
-            Orbwalker.SetAttacks((!W.IsReady() || E.IsReady()));
+            Orbwalker.SetAttack((!W.IsReady() || E.IsReady()));
 
             if (target != null)
             {
@@ -222,7 +222,7 @@ namespace LittleRedSharpie
         private static void Harass()
         {
             var target = SimpleTs.GetTarget(E.Range, SimpleTs.DamageType.Physical);
-            Orbwalker.SetAttacks((!W.IsReady() || E.IsReady()));
+            Orbwalker.SetAttack((!W.IsReady() || E.IsReady()));
 
             if (target != null)
             {
@@ -352,7 +352,7 @@ namespace LittleRedSharpie
                 if (Qdmg >= target.Health)
                 {
                     Q.Cast(target);
-                    Orbwalker.SetAttacks(true);
+                    Orbwalker.SetAttack(true);
                 }
             }
             if (Player.Distance(target) <= W.Range && E.IsReady() && target != null && Config.Item("UseWKs").GetValue<bool>())
