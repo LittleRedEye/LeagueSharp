@@ -34,7 +34,7 @@ namespace nasus
 
 
             var TargetSelectorMenu = new Menu("Target Selector", "Target Selector");
-            SimpleTs.AddToMenu(TargetSelectorMenu);
+            TargetSelector.AddToMenu(TargetSelectorMenu);
             Menu.AddSubMenu(TargetSelectorMenu);
 
 
@@ -136,7 +136,7 @@ namespace nasus
 
             if (useW && W.IsReady())
             {
-                var rTarget = SimpleTs.GetTarget(W.Range, SimpleTs.DamageType.Physical);
+                var rTarget = TargetSelector.GetTarget(W.Range, TargetSelector.DamageType.Physical);
                 if (rTarget != null)
                     useW = (Menu.Item("DontW" + rTarget.BaseSkinName) != null &&
                             Menu.Item("DontW" + rTarget.BaseSkinName).GetValue<bool>() == false);
@@ -148,7 +148,7 @@ namespace nasus
 
             if (useQ5 && Q.IsReady())
             {
-                var t = SimpleTs.GetTarget(300, SimpleTs.DamageType.Physical);
+                var t = TargetSelector.GetTarget(300, TargetSelector.DamageType.Physical);
                 if (t.IsValidTarget())
                 {
                     Q.Cast();
@@ -157,7 +157,7 @@ namespace nasus
 
             if (useE && E.IsReady())
             {
-                var t = SimpleTs.GetTarget(E.Range, SimpleTs.DamageType.Physical);
+                var t = TargetSelector.GetTarget(E.Range, TargetSelector.DamageType.Physical);
                 if (t.IsValidTarget())
                 {
                     var pred = E.GetPrediction(t);
