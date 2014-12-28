@@ -97,7 +97,7 @@ namespace TriKatarina
             _orbwalker = new Orbwalking.Orbwalker(_config.SubMenu("Orbwalking"));
 
             Menu targetSelectorMenu = new Menu("Target Selector", "TargetSelector", false);
-            SimpleTs.AddToMenu(targetSelectorMenu);
+            TargetSelector.AddToMenu(targetSelectorMenu);
 
             _config.AddSubMenu(targetSelectorMenu);
 
