@@ -57,7 +57,7 @@ namespace kTalon2
             // Menu 
             _config = new Menu(Player.ChampionName, Player.ChampionName, true);
             var targetSelectorMenu = new Menu("Target Selector", "Target Selector");
-            SimpleTs.AddToMenu(targetSelectorMenu);
+            TargetSelector.AddToMenu(targetSelectorMenu);
             _config.AddSubMenu(targetSelectorMenu);
 
             _config.AddSubMenu(new Menu("Orbwalking", "Orbwalking"));
@@ -180,7 +180,7 @@ namespace kTalon2
         {
             if (Player.Mana / Player.MaxMana * 100 < _config.SubMenu("harras").Item("ManatoHarras").GetValue<Slider>().Value) return;
 
-            var target = SimpleTs.GetTarget(_w.Range, SimpleTs.DamageType.Physical);
+            var target = TargetSelector.GetTarget(_w.Range, TargetSelector.DamageType.Physical);
             if (_config.SubMenu("harras").Item("WonPlayer").GetValue<bool>() && _w.IsReady())
             {
                 _w.CastOnUnit(target, false);
@@ -210,7 +210,7 @@ namespace kTalon2
 
         private static void Combo()
         {
-            var target = SimpleTs.GetTarget(_w.Range, SimpleTs.DamageType.Physical);
+            var target = TargetSelector.GetTarget(_w.Range, TargetSelector.DamageType.Physical);
 
             if (_config.SubMenu("combo").Item("useE").GetValue<bool>() && _e.IsReady())
             {
@@ -260,10 +260,10 @@ namespace kTalon2
                         _r.CastOnUnit(hero, false);
                     }
                     if (_igniteSlot != SpellSlot.Unknown &&
-                        Player.SummonerSpellbook.CanUseSpell(_igniteSlot) == SpellState.Ready &&
+                        Player.Spellbook.CanUseSpell(_igniteSlot) == SpellState.Ready &&
                         Player.Distance(hero) < 600 && Player.GetSummonerSpellDamage(hero, Damage.SummonerSpell.Ignite) > hero.Health)
                     {
-                        Player.SummonerSpellbook.CastSpell(_igniteSlot, hero);
+                        Player.Spellbook.CastSpell(_igniteSlot, hero);
                     }
                 }
             }
